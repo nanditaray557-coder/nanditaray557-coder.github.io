@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCraft | Premium Skin Care Guide</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-spa"></i> GlowCraft</a>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#skintypes">Skin Types</a>
+                <a href="#routine">Routine</a>
+                <a href="#tips">Expert Tips</a>
+                <a href="#contact" class="btn-nav">Get Advice</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Skin's True Potential</h1>
+            <p>Your ultimate, science-backed guide to achieving healthy, glowing, and radiant skin every single day.</p>
+            <div class="hero-btns">
+                <a href="#routine" class="btn-primary">Explore Routines</a>
+                <a href="#skintypes" class="btn-secondary">Know Your Skin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skin Types Section -->
+    <section class="section" id="skintypes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Understand Your Skin Type</h2>
+                <p>Every skin is unique. Identify your type to build the perfect care routine.</p>
+            </div>
+            <div class="grid-container">
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>Oily Skin</h3>
+                    <p>Prone to excess sebum production, enlarged pores, and occasional breakouts. Needs lightweight, oil-free hydration.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-feather"></i>
+                    <h3>Dry Skin</h3>
+                    <p>Lacks moisture, often feels tight or flaky. Requires rich, nourishing ingredients like ceramides and hyaluronic acid.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Combination Skin</h3>
+                    <p>Oily T-zone (forehead, nose, chin) with normal or dry cheeks. Needs targeted care for different zones.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h3>Sensitive Skin</h3>
+                    <p>Easily irritated, red, or reactive to harsh chemicals. Requires fragrance-free, soothing formulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routine Section -->
+    <section class="section bg-light" id="routine">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Ultimate Skincare Routine</h2>
+                <p>Simple, consistent steps for morning and night protection.</p>
+            </div>
+            <div class="routine-tabs">
+                <button class="tab-btn active" data-target="am">Morning Routine (AM)</button>
+                <button class="tab-btn" data-target="pm">Night Routine (PM)</button>
+            </div>
+            <div class="routine-content active" id="am">
+                <div class="routine-step">
+                    <span>01</span>
+                    <div>
+                        <h4>Gentle Cleanser</h4>
+                        <p>Wash away overnight impurities without stripping natural oils.</p>
+                    </div>
+                </div>
+                <div class="routine-step">
+                    <span>02</span>
+                    <div>
+                        <h4>Vitamin C Serum</h4>
+                        <p>Protect your skin from environmental stressors and brighten your complexion.</p>
+                    </div>
+                </div>
+                <div class="routine-step">
+                    <span>03</span>
+                    <div>
+                        <h4>Moisturizer & Sunscreen</h4>
+                        <p>Lock in hydration and apply a broad-spectrum SPF 30+ protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="routine-content" id="pm">
+                <div class="routine-step">
+                    <span>01</span>
+                    <div>
+                        <h4>Double Cleanse</h4>
+                        <p>Remove makeup, sunscreen, and daily pollution with an oil-based and water-based cleanser.</p>
+                    </div>
+                </div>
+                <div class="routine-step">
+                    <span>02</span>
+                    <div>
+                        <h4>Treatment / Exfoliant</h4>
+                        <p>Use retinoids, AHAs, or BHAs a few times a week for cellular renewal.</p>
+                    </div>
+                </div>
+                <div class="routine-step">
+                    <span>03</span>
+                    <div>
+                        <h4>Repair Night Cream</h4>
+                        <p>Feed your skin deep nourishment while you sleep to repair the skin barrier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Tips Section -->
+    <section class="section" id="tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Golden Rules of Skincare</h2>
+                <p>Habits that make a long-term difference.</p>
+            </div>
+            <div class="grid-container">
+                <div class="tip-card">
+                    <i class="fa-solid fa-glass-water"></i>
+                    <h4>Stay Hydrated</h4>
+                    <p>Drink adequate water to maintain overall cellular health and skin elasticity.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fa-solid fa-sun"></i>
+                    <h4>Never Skip SPF</h4>
+                    <p>Sun protection is the #1 anti-aging step you can take every single day.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fa-solid fa-moon"></i>
+                    <h4>Beauty Sleep</h4>
+                    <p>Aim for 7-9 hours of quality sleep to let your skin naturally repair itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3><i class="fa-solid fa-spa"></i> GlowCraft</h3>
+                <p>Empowering your skincare journey with clarity, science, and clean guidance.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#skintypes">Skin Types</a>
+                <a href="#routine">Routine</a>
+                <a href="#tips">Tips</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GlowCraft Skin Care Guide. Designed with care.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+      </html>
