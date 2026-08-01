@@ -15,6 +15,61 @@
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG-20260725-WA0023.jpg') no-repeat center center/cover !important;
         }
+
+        /* Rating Section Custom Styles */
+        .rating-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .stars-container i.active,
+        .stars-container i:hover,
+        .stars-container i:hover ~ i {
+            color: #ffca28;
+        }
+        .rating-feedback {
+            width: 100%;
+            max-width: 100%;
+            height: 100px;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            resize: vertical;
+        }
+        .btn-submit-rating {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn-submit-rating:hover {
+            background-color: #1a252f;
+        }
+        .rating-message {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #27ae60;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -28,6 +83,7 @@
                 <a href="#skintypes">Skin Types</a>
                 <a href="#routine">Routine</a>
                 <a href="#tips">Expert Tips</a>
+                <a href="#ratings">Ratings</a>
                 <a href="#contact" class="btn-nav">Get Advice</a>
             </nav>
             <div class="menu-toggle" id="mobile-menu">
@@ -167,6 +223,32 @@
         </div>
     </section>
 
+    <!-- Ratings & Feedback Section -->
+    <section class="section bg-light" id="ratings">
+        <div class="container">
+            <div class="section-title">
+                <h2>Rate Your Experience</h2>
+                <p>Help us improve! Share your rating and thoughts about GlowCraft.</p>
+            </div>
+            <div class="rating-box">
+                <h3>Select Your Rating</h3>
+                <div class="stars-container" id="starContainer">
+                    <i class="fa-solid fa-star" data-value="1"></i>
+                    <i class="fa-solid fa-star" data-value="2"></i>
+                    <i class="fa-solid fa-star" data-value="3"></i>
+                    <i class="fa-solid fa-star" data-value="4"></i>
+                    <i class="fa-solid fa-star" data-value="5"></i>
+                </div>
+                <textarea class="rating-feedback" id="ratingFeedback" placeholder="Write a short review or suggestion... (optional)"></textarea>
+                <br>
+                <button class="btn-submit-rating" id="submitRatingBtn">Submit Rating</button>
+                <div class="rating-message" id="ratingSuccessMsg">
+                    <i class="fa-solid fa-circle-check"></i> Thank you! Your rating has been submitted.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container footer-content">
@@ -180,6 +262,7 @@
                 <a href="#skintypes">Skin Types</a>
                 <a href="#routine">Routine</a>
                 <a href="#tips">Tips</a>
+                <a href="#ratings">Ratings</a>
             </div>
             <div class="footer-social">
                 <h4>Connect With Us</h4>
@@ -194,6 +277,55 @@
             <p>&copy; 2026 GlowCraft Skin Care Guide. Designed with care.</p>
         </div>
     </footer>
+
+    <!-- Rating JavaScript Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('#starContainer i');
+            const submitBtn = document.getElementById('submitRatingBtn');
+            const successMsg = document.getElementById('ratingSuccessMsg');
+            const feedbackText = document.getElementById('ratingFeedback');
+            let selectedRating = 0;
+
+            // Star selection handle
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    selectedRating = index + 1;
+                    updateStars(selectedRating);
+                });
+            });
+
+            function updateStars(rating) {
+                stars.forEach((star, i) => {
+                    if (i < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+
+            // Submit logic
+            submitBtn.addEventListener('click', () => {
+                if (selectedRating === 0) {
+                    alert('Please select at least 1 star before submitting.');
+                    return;
+                }
+
+                // Temporary confirmation display
+                successMsg.style.display = 'block';
+                
+                // Clear input values
+                feedbackText.value = '';
+                selectedRating = 0;
+                updateStars(0);
+
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 4000);
+            });
+        });
+    </script>
 
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
